@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            Utilizamos loops para repetir o mesmo código quantas
+            vezes quisermos.
+        */
+        
+        {
+            alert("Oi")
+            alert("Oi")
+            alert("Oi")
+            alert("Oi")
+            alert("Oi")
+            alert("Oi")
+            alert("Oi")
+            alert("Oi")
+            alert("Oi")
+            alert("Oi")
+        }
+
+        // FOR -> Quando eu sei a quantidade de vezes que vai repetir
+        {
+            for (let i = 0; i < 10; i++) {
+                alert("Oi")
+            }
+        }
+
+        // WHILE -> Quando eu não sei a quantidade de vezes que vai repetir
+        {
+            let opcao = ""            
+            while (opcao === "") {
+                opcao = prompt("Não digite nada para continuar repetindo")
+                alert("repetiu")
+            }
+        }
+
+        //BREAK -> Para o loop na linha em que ele foi digitado
+        {
+            lacoExterno:
+            for (let i = 0; i < 3; i++) {        
+                while (true) {
+                    opcao = prompt("Digite alguma coisa para continuar repetindo")
+                    alert("repetiu")
+                    
+                    if (opcao === "") {
+                        if (true) {
+                            break lacoExtern
+                        }                
+                    }       
+
+                    alert("depois do break")
+                }
+            }
+            console.log("Depois do while")
+        }
+
+        // CONTINUE -> Para a iteração do loop
+
+        {            
+            let acumuladora = 0
+            let contadora = 0
+            for (let i = 0; i < 10; i++) {
+                let valor = +prompt("Digite um valor")
+
+                if (valor < 0) {
+                    contadora++
+                }
+
+                // acumuladora = acumladora + valor
+                acumuladora += valor
+            }
+
+            console.log(`A quantidade de negativos é: ${contadora}`)
+            console.log(`A soma dos valores é: ${acumuladora.toFixed(2)}`)
+        }
+
+        //-----------------------------------------------------------------------------//
+        /*
+            1) Faça um programa que peça ao usuario para digitar 5 valores. Ao final, mostre a soma desses
+            valores e média desses valores (arredondado para duas casas decimais).
+
+            2) Faça um script que receba valores inteiros e mostre na tela quantos desses valores recebidos estão no intervalo
+            [10, 20] e quantos não estão. O programa irá parar de pedir números quando o usuário digitar um número negativo.
+        */
+
+        let somaValores = 0
+        for (let i = 0; i < 5; i++) {
+            let valor = +prompt("Digite um numero")
+
+            somaValores += valor
+        }
+
+        let media = somaValores / 5
+        console.log(`Soma: ${somaValores}\nMedia: ${media.toFixed(2)}`)
+    </script>
+</body>
+</html>

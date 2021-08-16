@@ -1,0 +1,169 @@
+Exercícios:
+
+1- Banco
+
+<body>
+    <h2>Rendimento de dinheiro</h2>
+    Valor inicial do depósito <input type="number" name="incial" id="inicial"> <br><br>
+    Porcentagem de juros ao ano <input type="number" name="juros" id="juros"> <br><br>
+    Quantidade de meses que o valor ficará depositado <input type="number" name="meses" id="meses"><br><br>
+ 
+    Rendimento de dinheiro: <input type="button" id="resultado" value="Clique para calcular" onclick="calcular()"><br><br>
+ 
+    A quantidade de dinheiro que rendeu nesse período é de: <div id="res"></div>
+ 
+    <script>
+ 
+        function calcular() {
+            let valor = document.querySelector("input#inicial")
+            let juros = document.querySelector("input#juros")
+            let meses = document.querySelector("input#meses")
+            let res = document.querySelector("div#res")
+ 
+            let val = Number(valor.value)
+            let jur = Number(juros.value / 100)
+            let mes = Number(meses.value / 12)
+ 
+            let formula = Math.round(val * (1 + jur * mes))
+            res.innerHTML = `${formula}R$.`
+       }
+ 
+    </script>
+</body>
+
+2- Formulário
+
+<body>
+    <style>
+           body {                
+                color: #333;
+                font: 1em / 1.4 Helvetica Neue, Helvetica, Arial, sans-serif;
+                padding: 1em;
+                margin: 0;
+            }
+ 
+            * {
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+ 
+    <body>
+    <h2>Envie seu comentário</h2>
+    <form>        
+        <ul>
+            <li>
+                <label for="uname">Nome de usuário</label>
+                <input type="text" name="uname" id="uname" required>
+            </li><br>
+            <li>
+                <label for="email">Email:</label>
+                <input type="text" name="email" onblur="validacaoEmail(f1.email)" required>
+                
+            </li><br>
+            <li>
+                <label for="phone">Número de telefone: (xxxxx-xxxx)</label>
+                <input pattern="^\d{5}-\d{4}$" type="tel" required>
+            </li><br>
+            <li>
+                <label for="comment">Comentário:</label>
+                <textarea name="comment" id="comment" required>
+                </textarea>
+            </li><br>
+            <li>
+                <button>Enviar comentário</button>
+            </li><br>
+        </ul>
+    </form>
+
+3- div
+
+<body>
+    <div id="mudar">Clique em mim</div>
+    <textarea id="texto"></textarea> 
+    <script>
+        let div = document.querySelector("div#mudar")
+        let textarea = document.querySelector("#texto")
+        let body = document.querySelector("body")
+        textarea.hidden = true
+        div.addEventListener("click", (event) => {
+            textarea.hidden = false
+            div.hidden = true
+            div.textContent = textarea.value
+            event.preventDefault();
+            div.focus()
+        })
+        
+        textarea.addEventListener("focusout", (event) => {
+            textarea.hidden = true
+            div.hidden = false
+        })
+ 
+        textarea.addEventListener("input", () => {
+            div.textContent = textarea.value
+ 
+        })
+    </script>
+</body>
+
+4- Ratinho
+
+<style>
+    * {
+        margin: 0;
+    }        
+
+    pre {
+        display: inline-block;
+        position: fixed;            
+    }
+
+    pre:focus {
+        outline: 1px dotted pink;
+    }
+</style>
+</head>
+
+<body>
+<pre>
+     _   _
+    (q\_/p)
+     /. .\
+    =\_t_/=   __
+     /   \   (
+    ((   ))   )
+    /\) (/\  /
+    \  Y  /-'
+     nn^nn
+</pre>
+<script>
+    let rato = document.querySelector("pre")
+
+    rato.addEventListener("click", () => {
+        rato.tabIndex = 0
+        rato.focus()
+        
+        rato.style.left = rato.getBoundingClientRect().left
+        rato.style.top = rato.getBoundingClientRect().top
+    })
+
+    rato.addEventListener("keydown", (e) => {
+        console.log(e.key)
+        switch (e.key) {
+            case "ArrowRight":                    
+                rato.style.left = parseInt(rato.style.left) + rato.clientWidth + "px"
+                break
+            case "ArrowUp":
+                rato.style.top = parseInt(rato.style.top) - rato.clientHeight + "px"
+                break
+            case "ArrowLeft":
+                rato.style.left = parseInt(rato.style.left) - rato.clientWidth + "px"
+                break
+            case "ArrowDown":
+                rato.style.top = parseInt(rato.style.top) + rato.clientHeight + "px"
+                break
+        }
+    })
+
+</script>
+</body>

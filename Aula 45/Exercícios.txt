@@ -1,11 +1,77 @@
-Exercícios:
+Exercícios: 
+
+herança-prototypal.html
+1-
+true
+null
+undefined
+
+2- 
+let cabeca = {
+    oculos: 1
+}
+
+ 
+
+let mesa = {
+    caneta: 3
+}
+
+ 
+
+let cama = {
+    lenco: 1,
+    travesseiro: 2
+}
+
+ 
+
+let bolso = {
+    dinheiro: 200
+}
+
+ 
+
+mesa.__proto__ = cabeca
+cama.__proto__ = mesa
+bolso.__proto__ = cama
+
+ 
+
+console.log(bolso.caneta) // 3
+console.log(cama.oculos) // 1
+console.log(mesa.dinheiro) // undefined*/
+
+3-
+<script>
+let hamster = {
+            estomago:[],
+ 
+comer(comida) {
+                this.estomago.push(comida)
+            }
+        }
+ 
+let hamtaro = {
+            __proto__:hamster,
+            estomago:[]
+        }
+ 
+let fofuxo = {
+            __proto__:hamster,
+            estomago:[]
+        }
+        hamtaro.comer("Maçã")
+        console.log(hamtaro.estomago)
+        console.log(fofuxo.estomago)
+</script>
+
 
 herança.html
 1-
 
-
 2-
- <script>
+<script>
 class Relogio {
 constructor(formato) {
 this.formato = formato
@@ -20,14 +86,14 @@ let segundos = data.getSeconds()
 if (segundos < 10) segundos = "0" + segundos
 let milissegundo = data.getMilliseconds()
 if (milissegundo < 10) milissegundo = "0" + milissegundo
-
+ 
 let resultado = this.formato
  .replace("h", horas)
  .replace("m", minutos)
  .replace("s", segundos)
 console.log(`${resultado} \n ${milissegundo * 3}`)
  }
-
+ 
 parar() {
 clearInterval(this.timer)
  }
@@ -40,9 +106,9 @@ class AdicionaMs extends Relogio{
 constructor(formato, tick) {
 super(formato)
 this.tick = tick
-
-
-
+ 
+ 
+ 
  }
 comecar() {
 super.renderizar()
@@ -54,4 +120,3 @@ let timer1 = new Relogio("h:m:s")
 let timer2 = new AdicionaMs("h:m:s", 3000)
 timer2.comecar()
 </script>
-

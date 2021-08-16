@@ -1,0 +1,130 @@
+Exercícios:
+
+1- 
+letdata = newDate(2012, 1, 20, 03, 12, 0)
+console.log(data)
+
+2-
+letdata = newDate()
+console.log(data)
+letdiaDaSemana = data.getDay()
+functionobtemDiaSemana(diaDaSemana){
+switch (diaDaSemana) {
+case0:
+console.log("Domingo")
+break;
+ 
+case1:
+console.log("Segunda-Feira")
+break;
+case2:
+console.log("Terça-Feira")
+break;
+ 
+case3:
+console.log("Quarta-Feira")
+break;
+case4:
+console.log("Quinta-Feira")
+break;
+case5:
+console.log("Sexta-Feira")
+break;
+case6:
+console.log("Sábado")
+break;
+default:
+break;
+            }
+        }
+obtemDiaSemana(diaDaSemana) 
+
+3- 
+letdata = newDate(2012, 12, 1, 03, 12, 0)
+console.log(data)
+ 
+letano = data.getFullYear()
+ 
+letmes = data.getMonth()
+ 
+functionobtemUltimoDiaMes(mes){
+switch (mes) {
+case0:
+console.log("O último dia do mês de Janeiro é 31")
+break;
+case1:
+console.log("O último dia do mês de Fevereiro é 28")  
+break;
+ 
+case2:
+console.log("O último dia do mês de Março é 31")    
+break;
+ 
+case3:
+console.log("O último dia do mês de Abril é 31")
+break;
+case4:
+console.log("O último dia do mês de Maio é 30")
+break;
+case5:
+console.log("O último dia do mês de Junho é 30")
+break;
+case6:
+console.log("O último dia do mês de Julho é 31")
+break;
+case7:
+console.log("O último dia do mês de Agosto é 31")
+break;
+case8:
+console.log("O último dia do mês de Setembro é 30")
+break;
+case9:
+console.log("O último dia do mês de Outubro é 31")
+break;
+case10:
+console.log("O último dia do mês de Novembro é 30")
+break;
+case11:
+console.log("O último dia do mês de Dezembro é 31")
+break;
+default:
+break;
+            }
+        }
+obtemUltimoDiaMes(mes)
+
+4- 
+functionobtemSegundos(){
+letdata = newDate()
+console.log(data)
+letsegundos = data.getSeconds()
+lethora = data.getHours()
+letminutos = data.getMinutes()
+ 
+lethora1 = hora * 3600
+letminutos1 = minutos * 60
+ 
+lettotalSegundos = minutos1 + hora1 + segundos
+console.log(totalSegundos)
+        }
+obtemSegundos()
+
+5- 
+functionsegundosParaAmanha(){
+letdata = newDate(2012, 12, 1, 22, 00, 0)
+console.log(data)
+letsegundos = data.getSeconds()
+lethora = data.getHours()
+letminutos = data.getMinutes()
+ 
+lethora1 = hora * 3600
+letminutos1 = minutos * 60
+ 
+lettotalSegundos = minutos1 + hora1 + segundos
+ 
+letsegundosFaltando = 86400 - totalSegundos
+console.log(segundosFaltando)
+        }
+segundosParaAmanha()
+
+6- 

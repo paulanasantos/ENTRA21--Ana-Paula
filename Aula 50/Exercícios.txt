@@ -1,0 +1,29 @@
+Exercícios: 
+
+1-
+
+        async function getCat() {
+            let response = await fetch("https://api.thecatapi.com/v1/images/search/category_ids=10/breed_id=", {
+                headers: {
+                    "x-api-key": "ea2c9cfc-5fe7-46fa-adf1-9c741d90259a"
+                }
+            });
+
+            if (!response.ok) {
+                return console.log("A requisição falhou!")
+            }
+
+            let body = await response.json();
+
+            createCatImage(body[0].url);
+        }
+
+        function createCatImage(url) {
+            const img = document.createElement("img");
+
+            img.src = url;
+
+            document.body.append(img);
+        }
+
+        getCat();

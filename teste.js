@@ -18,3 +18,4 @@ router.delete("/:id", usuariosControllers.remove);
 router.put("/:id", usuariosControllers.update);
 
 module.exports = router;
+
